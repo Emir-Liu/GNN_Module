@@ -159,9 +159,10 @@ class Hw(nn.Module):
                 raise TypeError("==> dg_list should be list or tensor, not {}".format(type(dg_list)))
             A = (self.Xi(X) * self.mu / self.s) / dg_list.view(-1, 1, 1)# (N, S, S)
             b = self.Rou(torch.chunk(X, chunks=2, dim=1)[0])# (N, S)
-            out = torch.squeeze(torch.matmul(A, torch.unsqueeze(H, 2)),-1) + b  # (N, s, s) * (N, s) + (N, s)
+            out = torch.squeeze(torch.matmul(A, torch.unsqueeze(H, 2)),-1) + b # (N, s, s) * (N, s) + (N, s)
+            
             return out    # (N, s)
-
+            
 
 '''
 实现信息聚合函数，将前面使用Hw函数得到的信息按照每一个source节点进行聚合，

@@ -1,0 +1,10 @@
+使用Torch模块，环境有所不同
+
+module 
+用原始GNN线性模型 实现简单的节点分类，数据随机
+Cora_GNN
+用原始GNN线性模型 实现Cora数据分类
+Cora_GCN
+用GCN来实现Cora数据分类
+Cora_GCN_1
+用GCN来实现Cora数据分类，来自深入浅出图神经网络
